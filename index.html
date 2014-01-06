@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tubewhacking</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta property="og:title" content="Tube Whacking - There are no Badgers in Pimlico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bengreen.org.uk/tube.html" />
+        <meta property="og:description" content="Pimlico is the only station on the London Underground which does not contain any of the letters in the word BADGER. Proof is here at last. Type in any word to see which stations do not contain its letters. Most people type BADGER first." />
+        <meta property="description" content="Pimlico is the only station on the London Underground which does not contain any of the letters in the word BADGER. Proof is here at last. Type in any word to see which stations do not contain its letters. Most people type BADGER first." />
+
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript">
+
+        var config = {
+            stations : {
+                underground: ["Acton Town","Aldgate","Aldgate East","Alperton","Amersham","Angel","Archway","Arnos Grove",
+                        "Arsenal","Baker Street","Balham","Bank","Barbican","Barking","Barkingside","Barons Court",
+                        "Bayswater","Becontree","Belsize Park","Bermondsey","Bethnal Green","Blackfriars","Blackhorse Road",
+                        "Bond Street","Borough","Boston Manor","Bounds Green","Bow Church","Bow Road","Brent Cross",
+                        "Brixton","Bromley-by-Bow","Buckhurst Hill","Burnt Oak","Caledonian Road","Camden Town",
+                        "Canada Water","Canary Wharf","Canning Town","Cannon Street","Canons Park","Chalfont & Latimer",
+                        "Chalk Farm","Chancery Lane","Charing Cross","Chesham","Chigwell","Chiswick Park","Chorleywood",
+                        "Clapham Common","Clapham North","Clapham South","Cockfosters","Colindale","Colliers Wood",
+                        "Covent Garden","Croxley","Dagenham East","Dagenham Hthway","Debden","Devons Row","Dollis Hill",
+                        "Ealing Broadway","Ealing Common","Earls Court","East Acton","East Finchley","East India",
+                        "East Putney","Eastcote","Edgware","Edgware Road","Elephant & Castle","Elm Park","Embankment",
+                        "Epping","Euston","Euston Square","Fairlop","Farringdon","Finchley Central","Finchley Road",
+                        "Finsbury Park","Fulham Broadway","Gants Hill","Gloucester Road","Golders Green","Goldhawk Road",
+                        "Goodge Street","Grange Hill","Great Portland St","Green Park","Greenford","Gunnersbury","Hainault",
+                        "Hammersmith","Hampstead","Hanger Lane","Harlesden","Harrow-on-the-Hill","Hatton Cross","Heathrow",
+                        "Hendon Central","High Barnet","High Street Kensington","Highbury & Islington","Highgate","Hillingdon",
+                        "Holborn","Holland Park","Holloway Road","Hornchurch","Hounslow Central","Hounslow East",
+                        "Hounslow West","Hyde Park Corner","Ickenham","Kennington","Kensal Green","Kensington (Olympia)",
+                        "Kentish Town","Kenton","Kew Gardens","Kilburn","Kilburn Park","Kings Cross St. Pancras","Kingsbury",
+                        "Knightsbridge","Ladbroke Grove","Lambeth North","Lancaster Gate","Latimer Road","Leicester Square",
+                        "Leyton","Leytonstone","Limehouse","Liverpool Street","London Bridge","Loughton","Maida Vale",
+                        "Manor House","Mansion House","Marble Arch","Marylebone","Mile End","Mill Hill East","Monument",
+                        "Moor Park","Moorgate","Morden","Mornington Crescent","Mudchute","Neasden","New Cross",
+                        "New Cross Gate","Newbury Park","North Acton","North Ealing","North Greenwich","North Harrow",
+                        "North Wembley","Northfields","Northolt","Northwick Park","Northwood","Northwood Hills",
+                        "Notting Hill Gate","Oakwood","Old Street","Osterley","Oval","Oxford Circus","Paddington",
+                        "Park Royal","Parsons Green","Perivale","Piccadilly Circus","Pimlico","Pinner","Plaistow",
+                        "Poplar","Preston Road","Prince Regent","Pudding Mill Lane","Putney Bridge","Queens Park",
+                        "Queensbury","Queensway","Ravenscourt Park","Rayners Lane","Redbridge","Regents Park",
+                        "Richmond","Rickmansworth","Roding Valley","Rotherhithe","Royal Albert","Royal Oak",
+                        "Royal Victoria","Ruislip","Ruislip Gardens","Ruislip Manor","Russell Square","Seven Sisters",
+                        "Shadwell","Shepherds Bush","Shoreditch","Snaresbrook","South Ealing","South Harrow",
+                        "South Kensington","South Kenton","South Quay","South Ruislip","South Wimbledon","South Woodford",
+                        "Southfields","Southgate","Southwark","St. James's Park","St. Johns Wood","St. Pauls","Stamford Brook",
+                        "Stanmore","Stepney Green","Stockwell","Stonebridge Park","Stratford","Sudbury Hill","Sudbury Town",
+                        "Surrey Quays","Swiss Cottage","Temple","Theydon Bois","Tooting Bec","Tooting Broadway",
+                        "Tottenham Court Rd","Tottenham Hale","Totteridge & Whetstone","Tower Gateway","Tower Hill",
+                        "Tufnell Park","Turnham Green","Turnpike Lane","Upminster Bridge","Upney","Upton Park","Uxbridge",
+                        "Vauxhall","Victoria","Walthamstow Central","Wanstead","Wapping","Warren Street","Warwick Avenue",
+                        "Waterloo","Watford","Wembley Central","Wembley Park","West Acton","West Brompton","West Finchley",
+                        "West Ham","West Hampstead","West Harrow","West India Quay","West Kensington","West Ruislip",
+                        "Westbourne Park","Westferry","Westminster","White City","Whitechapel","Willesden Green",
+                        "Willesden Junction","Wimbledon","Wimbledon Park","Wood Green","Woodford","Woodside Park"],
+                overground: ["Kew Gardens", "Gunnersbury", "South Acton", "Acton Central", "Willesden Junction",
+                        "Kensal Rise", "Brondesbury Park", "Brondesbury", "West Hampstead", "Finchley Road & Frognal",
+                        "Hampstead Heath", "Gospel Oak", "Kentish Town West", "Camden Road", "Caledonian Road & Barnsbury",
+                        "Highbury & Islington", "Canonbury", "Dalston Kingsland", "Hackney Central", "Homerton", "Hackney Wick",
+                        "Stratford Olympic", "Willesden Junction", "Shepherd's Bush", "Kensington (Olympia)", "West Brompton",
+                        "Imperial Wharf", "Clapham Junction", "Highbury & Islington", "Canonbury", "Dalston Junction", "Haggerston",
+                        "Hoxton", "Shoreditch High Street", "Whitechapel", "Shadwell", "Wapping", "Rotherhithe", "Canada Water",
+                        "Surrey Quays", "New Cross", "New Cross Gate", "Brockley", "Honor Oak Park", "Forest Hill", "Sydenham",
+                        "Crystal Palace", "Penge West", "Anerley", "Norwood Junction", "West Croydon Tramlink", "Surrey Quays",
+                        "Queens Road Peckham", "Peckham Rye", "Denmark Hill", "Clapham High Street", "Wandsworth Road", "Clapham Junction",
+                        "Battersea Park", "Euston", "South Hampstead", "Kilburn High Road", "Queen's Park", "Kensal Green",
+                        "Willesden Junction", "Harlesden", "Stonebridge Park", "Wembley Central", "North Wembley", "South Kenton",
+                        "Kenton", "Harrow & Wealdstone", "Headstone Lane", "Hatch End", "Carpenders Park", "Bushey",
+                        "Watford High Street", "Watford Junction", "Gospel Oak", "Upper Holloway", "Crouch Hill", "Harringay Green Lanes",
+                        "South Tottenham", "Blackhorse Road", "Walthamstow Queen's Road", "Leyton Midland Road",
+                        "Leytonstone High Road", "Wanstead Park", "Woodgrange Park", "Barking"],
+                ubahn: ["Adenauerplatz", "Afrikanische Straße", "Alexanderplatz", "Alt-Mariendorf", "Alt-Tegel",
+                        "Alt-Tempelhof", "Altstadt Spandau", "Amrumer Straße", "Augsburger Straße", "Bayerischer Platz",
+                        "Berliner Straße", "Bernauer Straße", "Biesdorf-Süd", "Birkenstraße", "Bismarckstraße", "Blaschkoallee",
+                        "Blissestraße", "Boddinstraße", "Borsigwerke", "Breitenbachplatz", "Brandenburger Tor", "Britz-Süd",
+                        "Bülowstraße", "Bundestag", "Bundesplatz", "Cottbusser Platz", "Dahlem-Dorf", "Deutsche Oper",
+                        "Eberswalder Straße", "Eisenacher Straße", "Elsterwerdaer Platz", "Ernst-Reuter-Platz",
+                        "Fehrbelliner Platz", "Frankfurter Allee", "Frankfurter Tor", "Franz-Neumann-Platz",
+                        "Französische Straße", "Friedrichsfelde", "Friedrichstraße", "Friedrich-Wilhelm-Platz",
+                        "Gesundbrunnen", "Gleisdreieck", "Gneisenaustraße", "Görlitzer Bahnhof", "Grenzallee",
+                        "Güntzelstraße", "Halemweg", "Hallesches Tor", "Hansaplatz", "Haselhorst", "Hauptbahnhof",
+                        "Hausvogteiplatz", "Heidelberger Platz", "Heinrich-Heine-Straße", "Hellersdorf", "Hermannplatz",
+                        "Hermannstraße", "Hönow", "Hohenzollernplatz", "Holzhauser Straße", "Innsbrucker Platz",
+                        "Jakob-Kaiser-Platz", "Jannowitzbrücke", "Johannisthaler Chaussee", "Jungfernheide", "Kaiserdamm",
+                        "Kaiserin-Augusta-Straße", "Karl-Bonhoeffer-Nervenklinik", "Karl-Marx-Straße", "Kaulsdorf-Nord",
+                        "Kleistpark", "Klosterstraße", "Kochstraße", "Konstanzer Straße", "Kottbusser Tor", "Krumme Lanke",
+                        "Kurfürstendamm", "Kurfürstenstraße", "Kurt-Schumacher-Platz", "Leinestraße", "Leopoldplatz",
+                        "Lichtenberg", "Lindauer Allee", "Lipschitzallee", "Louis-Lewin-Straße", "Magdalenenstraße",
+                        "Märkisches Museum", "Mehringdamm", "Mendelssohn-Bartholdy-Park", "Mierendorffplatz", "Möckernbrücke",
+                        "Mohrenstraße", "Moritzplatz", "Naturkundemuseum", "Nauener Platz", "Neu-Westend",
+                        "Neue Grottkauer Straße", "Neukölln", "Nollendorfplatz", "Olympia-Stadion", "Onkel Toms Hütte",
+                        "Oranienburger Tor", "Oskar-Helene-Heim", "Osloer Straße", "Otisstraße", "Pankow", "Pankstraße",
+                        "Paracelsus-Bad", "Paradestraße", "Parchimer Allee", "Paulsternstraße", "Platz der Luftbrücke",
+                        "Podbielskiallee", "Potsdamer Platz", "Prinzenstraße", "Rathaus Neukölln", "Rathaus Reinickendorf",
+                        "Rathaus Schöneberg", "Rathaus Spandau", "Rathaus Steglitz", "Rehberge", "Reinickendorfer Straße",
+                        "Residenzstraße", "Richard-Wagner-Platz", "Rohrdamm", "Rosa-Luxemburg-Platz", "Rosenthaler Platz",
+                        "Rüdesheimer Platz", "Rudow", "Ruhleben", "Samariterstraße", "Scharnweberstraße", "Schillingstraße",
+                        "Schlesisches Tor", "Schloßstraße", "Schönhauser Allee", "Schönleinstraße", "Schwartzkopffstraße",
+                        "Seestraße", "Senefelderplatz", "Siemensdamm", "Sophie-Charlotte-Platz", "Spichernstraße", "Spittelmarkt",
+                        "Stadtmitte", "Strausberger Platz", "Südstern", "Tempelhof", "Theodor-Heuss-Platz", "Thielplatz",
+                        "Tierpark", "Turmstraße", "Uhlandstraße", "Ullsteinstraße", "Viktoria-Luise-Platz", "Vinetastraße",
+                        "Voltastraße", "Walther-Schreiber-Platz", "Warschauer Straße", "Weberwiese", "Wedding", "Weinmeisterstraße",
+                         "Westhafen", "Westphalweg", "Wilmersdorfer Straße", "Wittenau", "Wittenbergplatz", "Wuhletal", "Wutzkyallee",
+                         "Yorckstraße", "Zitadelle", "Zoologischer Garten", "Zwickauer Damm"],
+                sbahn: ["Adlershof", "Ahrensfelde", "Alexanderplatz", "Altglienicke", "Alt-Reinickendorf", "Anhalter Bahnhof", "Attilastraße",
+                        "Baumschulenweg", "Bellevue", "Bergfelde", "Bernau bei Berlin", "Bernau-Friedenstal", "Beusselstraße", "Biesdorf",
+                        "Birkenstein","Birkenwerder", "Blankenburg", "Blankenfelde (Kr. Teltow-Fläming)", "Borgsdorf", "Bornholmer Straße",
+                        "Botanischer Garten", "Brandenburger Tor", "Buch", "Buckower Chaussee", "Bundesplatz", "Charlottenburg", "Eichborndamm",
+                        "Eichwalde", "Erkner", "Feuerbachstraße", "Flughafen Schönefeld", "Frankfurter Allee", "Fredersdorf", "Friedenau",
+                        "Friedrichsfelde Ost", "Friedrichshagen", "Friedrichstraße", "Frohnau", "Gehrenseestraße", "Gesundbrunnen",
+                        "Greifswalder Straße", "Grünau", "Grünbergallee", "Grunewald", "Hackescher Markt", "Halensee", "Berlin Hauptbahnhof",
+                        "Heerstraße", "Heidelberger Platz", "Heiligensee", "Hennigsdorf", "Hermannstraße", "Hermsdorf", "Hirschgarten",
+                        "Hohen Neuendorf", "Hohenschönhausen", "Hohenzollerndamm", "Hoppegarten (Mark)", "Humboldthain", "Innsbrucker Platz",
+                        "Jannowitzbrücke", "Julius-Leber-Brücke", "Jungfernheide", "Karl-Bonhoeffer-Nervenklinik", "Karlshorst", "Karow",
+                        "Kaulsdorf", "Köllnische Heide", "Königs Wusterhausen", "Köpenick", "Landsberger Allee", "Lankwitz", "Lehnitz",
+                        "Lichtenberg", "Lichtenrade", "Lichterfelde Ost", "Lichterfelde Süd", "Lichterfelde West", "Mahlow", "Mahlsdorf",
+                        "Marienfelde", "Marzahn", "Mehrower Allee", "Messe Nord/ICC", "Messe Süd", "Mexikoplatz", "Mühlenbeck-Mönchmühle",
+                        "Neuenhagen", "Neukölln", "Nikolassee", "Nöldnerplatz", "Nordbahnhof", "Oberspree", "Olympiastadion", "Oranienburg",
+                        "Oranienburger Straße", "Osdorfer Station", "Ostbahnhof", "Ostkreuz", "Pankow", "Pankow-Heinersdorf",
+                        "Petershagen Nord station", "Pichelsberg", "Plänterwald", "Poelchaustraße", "Potsdam-Babelsberg", "Potsdam Griebnitzsee",
+                        "Potsdam Hauptbahnhof", "Potsdamer Platz", "Prenzlauer Allee", "Priesterweg", "Rahnsdorf", "Raoul-Wallenberg-Straße",
+                        "Rathaus Steglitz", "Röntgental", "Rummelsburg", "Betriebsbahnhof Rummelsburg", "Savignyplatz", "Schichauweg",
+                        "Schlachtensee", "Schöneberg", "Schöneweide", "Betriebsbahnhof Schöneweide", "Schönfließ", "Schönhauser Allee", "Schönholz",
+                        "Schulzendorf", "Sonnenallee", "Spandau", "Spindlersfeld", "Springpfuhl", "Storkower Straße", "Strausberg",
+                        "Strausberg Hegermühle", "Strausberg Nord", "Strausberg Stadt", "Stresow", "Südende", "Südkreuz", "Sundgauer Straße",
+                        "Tegel", "Teltow Stadt", "Tempelhof", "Tiergarten", "Treptower Park", "Waidmannslust", "Wannsee", "Warschauer Straße",
+                        "Wartenberg", "Wedding", "Westend", "Westhafen", "Westkreuz", "Wildau railway station", "Wilhelmshagen", "Wilhelmsruh",
+                        "Wittenau", "Wollankstraße", "Wuhletal", "Wuhlheide", "Yorckstraße", "Zehlendorf", "Zepernick", "Zeuthen",
+                        "Zoologischer Garten"],
+                wombling: [],
+                womblen: []
+            },
+            output: window,
+            badger: window,
+            stationSet: "underground",
+            exp: [],
+            count: 0
+            };
+			var gS = {
+                showStations: function(stationList) {
+                    var showtweetme = "hide";
+                    var tweetme = document.getElementById("tweetme");
+                    var word = config.stationSet == "ubahn" ? "Berlin U-Bahn" : "London Underground";
+                    var msg = "http://twitter.com/home?status="
+                    if ((stationList.length) && (stationList.length == 1)) {
+                        showtweetme = "show";
+                        msg += stationList[0].toUpperCase() + " is the only " + word + " station without any of the letters of " + config.badger.value.toUpperCase() + " in it. Innit? http://bit.ly/bK9lmu";
+                        tweetme.href = msg
+                    }
+                    tweetme.className = showtweetme;
+                    config.output.innerHTML = stationList.join(", ");
+                },
+                getStations: function() {
+                    var currentStations = config.stations[config.stationSet]
+                    var resultArray = [];
+                    var pattern = '';
+                    if ( config.exp.length == 0 ) {
+                        gS.showStations(currentStations);
+                    } else {
+                        pattern = new RegExp("(" + config.exp.join("|") + ")");
+                        for ( var i = 0, len = currentStations.length; i < len; i++) {
+                            if (!pattern.test(currentStations[i].toLowerCase())) resultArray.push(currentStations[i])
+                        }
+                    gS.showStations(resultArray)
+                    }
+                },
+                mergeTwoArrays: function(array1, array2) {
+                    var hash = {},
+                        mergedAndSortedArray = [],
+                        temp, i;
+                    for(i=0; i < array1.length; i++) {
+                        hash[array1[i]] = true;
+                        mergedAndSortedArray.push(array1[i]);
+                    }
+                    for(i=0; i < array2.length; i++) {
+                        temp = array2[i];
+                        if (!hash[temp]){
+                            hash[temp] = true;
+                            mergedAndSortedArray.push(temp);
+                        }
+                    }
+                    mergedAndSortedArray.sort(function(a,b){
+                       	return a < b ? -1 : 1;
+                    });
+                    return mergedAndSortedArray;
+                },
+                mergeWombles: function() {
+                    config.stations.wombling = gS.mergeTwoArrays(config.stations.underground, config.stations.overground);
+                    config.stations.womblen = gS.mergeTwoArrays(config.stations.ubahn, config.stations.sbahn);
+                },
+                setStation: function(e) {
+                    var i;
+                    var radios = document.querySelectorAll("input[type='radio']");
+                    for (i = 0; i < radios.length; i++) {
+                        if(radios[i].checked){
+                            config.stationSet = radios[i].value
+                        }
+                    }
+                    gS.getStations();
+                },
+                updateValue: function(e) {
+                    config.exp.length = 0;
+                    var el = (e ? e.target : event.srcElement);
+                    var valchar = '';
+                    val = el.value || "";
+                    for (var k = 0, vallen = val.length; k < vallen; k++) {
+                        var pattern = new RegExp("^(" + config.exp.join('|') + ")$");
+                        valchar = val.charAt(k).toLowerCase();
+                        if ( /\w/.test(valchar) && (!pattern.test(valchar)) && vallen > 0 ) {
+                            config.exp.push(valchar)
+                        }
+                    }
+                    gS.getStations();
+                    el.focus();
+                },
+                init: function() {
+                    config.output = document.getElementById("output");
+                    config.badger = document.getElementById("badgerbadger");
+                    config.badger.addEventListener("keyup", gS.updateValue, true);
+                    document.getElementById("stationPicker").addEventListener("click", gS.setStation, true);
+                    gS.mergeWombles();
+                    gS.getStations();
+                    config.badger.focus();
+                    config.badger.value = "";
+                }
+            };
+            window.addEventListener("load", gS.init, true);
+		</script>
+	</head>
+	<body>
+		<h1>Tubewhacking</h1>
+		<p>Pimlico is the only station on the London Underground which does not
+		contain any of the letters in the word "Badger". Proof is here at last.<br />
+		Type in any word to see which stations do not contain its letters. Most people type "badger" first.</p>
+		<ul id="stationPicker">
+		    <li><input type="radio" id="stations" name="stations" value="underground" checked="checked"> <label for="underground"> London Underground: </label></li>
+		    <li><input type="radio" id="womblingfree" name="stations" value="wombling"> <label for="womblingfree"> London Transport Wombling Option (Underground <em>and</em> Overground) </label></li>
+		    <!--
+		    <li><input type="radio" id="ubahn" name="stations" value="ubahn"> <label for="ubahn"> Berlin U-Bahn Network: </label></li>
+		    <li><input type="radio" id="sbahn" name="stations" value="sbahn"> <label for="sbahn"> Berlin S-Bahn Network: </label></li>
+		    -->
+		    <li><input type="radio" id="womblen" name="stations" value="womblen"> <label for="womblen"> Berlin S- & U-Bahn Gesamtnetz: </label></li>
+		</ul>
+		<label for="badgerbadger">Type here &gt; &nbsp;</label>
+		<input id="badgerbadger" />
+		<a href="http://twitter.com/home?status=" target="_blank" id="tweetme" class="hide">Tweet this</a>
+
+		<h2>stations remaining:</h2>
+		<div id="output"></div>
+		<p id="smallprint">Many thanks to <a href="http://www.popbitch.com/">popbitch</a> and <a href="http://www.b3ta.com/newsletter/issue419/">b3ta</a> for the shouts.<br />If you can't see anything, its probably because you're on a <a href="http://whyiesucks.blogspot.com/">shit browser</a>
+		<a href="http://www.google.com/chrome">Go</a> and <a href="http://www.mozilla.com/en-US/">get</a> a <a href="http://www.apple.com/safari/">good </a> one.<br />
+		If you've got a good one, and it's still broken, its probably <a href="http://twitter.com/VeganBen">my</a> fault</p>
+		<p>Now available on for your pulling and forking pleasure on the githubs: <a href="https://github.com/veganben/tubewhacking">Tubewhacking</a></p>
+
+</body>
+</html>
